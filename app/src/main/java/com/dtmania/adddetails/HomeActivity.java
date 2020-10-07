@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity {
-    private Button button;
+    private Button button,next;
     private EditText name, email, profession;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class HomeActivity extends AppCompatActivity {
         email = findViewById(R.id.editEmailAddDetails);
         profession = findViewById(R.id.editProfession);
         button = findViewById(R.id.addDetails);
+        next = findViewById(R.id.next);
+        next.setEnabled(false);
         Intent intent = getIntent();
         email.setText(intent.getStringExtra("email"));
         button.setOnClickListener(new View.OnClickListener() {
@@ -37,7 +39,14 @@ public class HomeActivity extends AppCompatActivity {
                     map.put("Profession", profession.getText().toString());
                     map.put("Email", email.getText().toString());
                     FirebaseDatabase.getInstance().getReference().push().updateChildren(map);
+                    next.setEnabled(true);
                 }
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this,FetchDataActivity.class));
             }
         });
     }

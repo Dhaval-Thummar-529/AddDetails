@@ -99,6 +99,7 @@
         android:layout_below="@+id/profession"
         android:layout_alignParentRight="true"
         android:textStyle="bold"
+        android:id="@+id/next"
         android:textSize="20dp"
         android:layout_toStartOf="@+id/addDetails"
         android:layout_alignParentEnd="true" />

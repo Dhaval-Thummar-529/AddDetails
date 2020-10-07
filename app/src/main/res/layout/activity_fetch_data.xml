@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:padding="5dp"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/languages"
+        android:textColor="#111111"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginBottom="50dp"
+        android:isScrollContainer="true"
+        android:padding="5dp">
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/getDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        android:text="Add value"
+        android:textColor="#111111"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/newValue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/next"
+        android:layout_toLeftOf="@+id/next"
+        android:layout_toEndOf="@+id/getDetails"
+        android:layout_toRightOf="@+id/getDetails"
+        android:textColor="#111111" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:text="@string/next"
+        android:textColor="#0772DD"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

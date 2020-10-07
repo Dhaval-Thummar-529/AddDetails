@@ -12,4 +12,7 @@
     <string name="profession">Profession :</string>
     <string name="add_details">Add Details</string>
     <string name="next">Next</string>
+    <string name="your_details_will_appear_here">Your details will appear here</string>
+    <string name="get_details">get Details</string>
+    <string name="languages">Languages</string>
 </resources>
