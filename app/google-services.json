@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "673855155035",
+    "firebase_url": "https://emailregistration-d7b05.firebaseio.com",
+    "project_id": "emailregistration-d7b05",
+    "storage_bucket": "emailregistration-d7b05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673855155035:android:ebce4549e94da93fd8c87e",
+        "android_client_info": {
+          "package_name": "com.dtmania.adddetails"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673855155035-iq8bsd68d7nopoo9idc5dlch3tohrf8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdVoO0AXj0fWkNmXZ_FHpKpKO-_f6-BDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673855155035-iq8bsd68d7nopoo9idc5dlch3tohrf8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673855155035:android:23603efb34a7b3cad8c87e",
+        "android_client_info": {
+          "package_name": "com.dtmania.emailregistration"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "673855155035-iq8bsd68d7nopoo9idc5dlch3tohrf8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdVoO0AXj0fWkNmXZ_FHpKpKO-_f6-BDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "673855155035-iq8bsd68d7nopoo9idc5dlch3tohrf8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
