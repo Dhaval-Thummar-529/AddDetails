@@ -26,38 +26,69 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         auth = FirebaseAuth.getInstance();
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SignUPActivity.class));
             }
         });
+        if (isFirstRun) {
+
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String emailMain = email.getText().toString();
+                    String passwordMain = password.getText().toString();
+                    if ((email.getText().toString()).isEmpty() && (password.getText().toString()).isEmpty()) {
+                        Toast.makeText(MainActivity.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
+                    } else {
 
 
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                        auth.signInWithEmailAndPassword(emailMain, passwordMain).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                                intent.putExtra("email", email.getText().toString());
+                                startActivity(intent);
+                            }
 
-                String emailMain = email.getText().toString();
-                String passwordMain = password.getText().toString();
-                if ((email.getText().toString()).isEmpty() && (password.getText().toString()).isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
-                } else {
-
-
-                    auth.signInWithEmailAndPassword(emailMain, passwordMain).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
-                            Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                            intent.putExtra("email",email.getText().toString());
-                            startActivity(intent);
-                        }
-
-                    });
+                        });
+                    }
                 }
-            }
 
-        });
+            });
+        }
+        else {
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String emailMain = email.getText().toString();
+                    String passwordMain = password.getText().toString();
+                    if ((email.getText().toString()).isEmpty() && (password.getText().toString()).isEmpty()) {
+                        Toast.makeText(MainActivity.this, "Please fill all the details", Toast.LENGTH_SHORT).show();
+                    } else {
+
+
+                        auth.signInWithEmailAndPassword(emailMain, passwordMain).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+                                Toast.makeText(MainActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(MainActivity.this, FetchDataActivity.class);
+                                startActivity(intent);
+                            }
+
+                        });
+                    }
+                }
+
+            });
+        }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).apply();
     }
 }

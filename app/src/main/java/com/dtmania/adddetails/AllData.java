@@ -37,6 +37,7 @@ public class AllData extends AppCompatActivity {
                     String txt = member.getName() + "\n" + member.getEmail() + "\n" + member.getProfession();
                     list.add(txt);
                 }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
